@@ -5,15 +5,18 @@ public class Piezas : MonoBehaviour
 {
     public Inventario inventario;
     // Start is called before the first frame update
+    public GameObject inf;
     void Start()
     {
         inventario = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventario>();
+        inf.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other){
         if (other.tag == "Player"){
             inventario.cantidad += 1;
             Destroy(gameObject);
+            inf.SetActive(true);
         }
     }
 

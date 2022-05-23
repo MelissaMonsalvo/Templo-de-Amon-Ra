@@ -23,7 +23,8 @@ public CharacterController cc;
             velocity.y = -3f;
         }
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        //if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump"))
         {
             velocity.y = Mathf.Sqrt(3 * -2f * Gravedad);
         }
